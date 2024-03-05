@@ -7,14 +7,14 @@ Create next structure
 ```
 ├── pascal/              # Main directory
     ├── code/            # source files
-    ├── executable/        # executable files
+    ├── executable/      # executable files
 ```
 Download the sfpc.sh from this repository and place it in the created inside your main directory. Now main directory should look like this:
 ```
 ├── pascal/              # Main directory
     ├── sfpc.sh          # Bash script
     ├── code/            # source files
-    ├── executable/        # executable files
+    ├── executable/      # executable files
 ```
 Done
 
