@@ -40,4 +40,4 @@ Now, let's compile our `hello_world.pas` file
 
 `./sfpc co hello_world`
 
-The script will compile the file and and put it in `executable/` and automatically execute it
+The script will compile the file, place it in the 'executable/' directory, automatically execute it, and also delete the object file, which for some reason fpc does not delete
