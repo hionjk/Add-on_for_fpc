@@ -6,20 +6,18 @@ error() {
 SOURCE_CODE_DIRECTORY="./code";
 EXECUTABLE_FILES_DIRECTORY='./executable';
 
-createDirectory() {
-  mkdir ./$1;
-  echo
+init() {
+  mkdir $SOURCE_CODE_DIRECTORY
+  mkdir $EXECUTABLE_FILES_DIRECTORY;
+  echo "Initializing: success";
 }
-
-if [ "$#" -ne 2 ]; then
-  error "arguments are not enough" 1
-fi
 
 compile() {
   echo "Compilating $1.pas ..."
 
   if [ ! -d "$EXECUTABLE_FILES_DIRECTORY" ]; then 
-    createDirectory $EXECUTABLE_FILES_DIRECTORY;
+    error "Directory $EXECUTABLE_FILES_DIRECTORY doesn't exist; Execute: ./sfpc.sh init
+"
   fi
 
   if [ $1 == *.pas ]; then
@@ -45,7 +43,7 @@ create() {
   echo "Creating: $1.pas ..."
 
   if [ ! -d "$SOURCE_CODE_DIRECTORY" ]; then 
-    createDirectory $SOURCE_CODE_DIRECTORY;
+    error "Directory $SOURCE_CODE_DIRECTORY doesn't exist; Execute: ./sfpc.sh init or just create   "
   fi
 
   if [ -f "$SOURCE_CODE_DIRECTORY/$1.pas" ]; then
@@ -63,8 +61,16 @@ end." >> $SOURCE_CODE_DIRECTORY/$1.pas
   echo "Creating: file $1.pas created successfully "
 }
 
+if [ $1 != 'init' ]; then
+  if [ $# -ne 2 ]; then
+    error "arguments are not enough" 1
+  fi
+fi
+
 if [ $1 == 'co' ]; then
   compile $2
 elif [ $1 == 'cr' ]; then
   create $2
+elif [ $1 == 'init' ]; then
+  init
 fi
