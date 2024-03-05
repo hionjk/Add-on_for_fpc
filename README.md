@@ -35,4 +35,4 @@ Now, let's compile our `hello_world.pas` file
 
 `./sfpc co hello_world`
 
-The script will compile the file and and put it in `programs/` automatically execute it
+The script will compile the file and and put it in `programs/` and automatically execute it
