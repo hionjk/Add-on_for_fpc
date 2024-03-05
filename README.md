@@ -16,6 +16,10 @@ Download the sfpc.sh from this repository and place it in the created inside you
     ├── code/            # source files
     ├── executable/      # executable files
 ```
+
+Now, let's make our script executable! You can do this with the following command
+`chmod +x sfpc.sh`
+
 Done
 
 # First Run
