@@ -6,6 +6,10 @@ error() {
 SOURCE_CODE_DIRECTORY="./code";
 EXECUTABLE_FILES_DIRECTORY='./executable';
 
+if [ $# -le 1 ]; then
+  error "arguments are not enough" 1
+fi
+
 init() {
   mkdir $SOURCE_CODE_DIRECTORY
   mkdir $EXECUTABLE_FILES_DIRECTORY;
