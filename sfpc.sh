@@ -71,10 +71,10 @@ if [ $1 != 'init' ]; then
   fi
 fi
 
-if [ $1 == 'co' ]; then
+if [ $1 = 'co' ]; then
   compile $2
-elif [ $1 == 'cr' ]; then
+elif [ $1 = 'cr' ]; then
   create $2
-elif [ $1 == 'init' ]; then
+elif [ $1 = 'init' ]; then
   init
 fi
