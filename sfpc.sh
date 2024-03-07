@@ -24,7 +24,7 @@ compile() {
 "
   fi
 
-  if [ $1 == *.pas ]; then
+  if [ $1 = *.pas ]; then
     error "Enter the file name without suffix" 2
   fi
 
